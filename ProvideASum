@@ -1,0 +1,29 @@
+import java.util.*;
+  
+public class ProvideASum 
+{
+     public static int addallnums(int arr[], int total)
+    {
+        if (total == -1) 
+        {
+            return 0;
+        }
+        return arr[total] + addallnums(arr,total - 1);
+        
+    }
+    public static void main(String[] args)
+    {
+        Scanner scnr=new Scanner(System.in);
+        System.out.println("How many units in array: ");
+        int n=scnr.nextInt();
+        int sumofall = 0;
+        int arr[] = new int[n];
+        System.out.println("Enter values of each unit: ");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=scnr.nextInt();
+        }
+        sumofall = addallnums(arr, n-1);
+        System.out.println("The sum of all units is: "+ sumofall);
+    }
+}
